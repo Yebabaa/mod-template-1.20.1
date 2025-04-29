@@ -13,11 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
     public static final Item RUBY = register("ruby", new Item(new FabricItemSettings()));
-
-    private static void addItemsToIngredient(FabricItemGroupEntries entries)
-    {
-        entries.add(RUBY);
-    }
+    public static final Item RAW_RUBY = register("raw_ruby", new Item(new FabricItemSettings()));
 
     private static Item register(String name, Item item)
     {
@@ -26,7 +22,5 @@ public class ModItems {
 
     public static void regModItems(){
         Mod.LOGGER.info("Registering Mod Items for " + Mod.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredient);
     }
 }
